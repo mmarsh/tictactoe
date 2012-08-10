@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ticTacEngine Test</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/lib/loader.js"></script>
+    </head>
+    <body class='hide'>
+        <div id='gameBoard'>
+            <div style="height: 50px">
+                <div id='A3' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: A3() == X,  oSquare: A3() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='B3' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: B3() == X,  oSquare: B3() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='C3' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: C3() == X,  oSquare: C3() == O}'></div>
+            </div>
+            <div class="horzLine"></div>
+            <div style="height: 50px">
+                <div id='A2' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: A2() == X,  oSquare: A2() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='B2' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: B2() == X,  oSquare: B2() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='C2' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: C2() == X,  oSquare: C2() == O}'></div>
+            </div>
+            <div class="horzLine"></div>
+            <div style="height: 50px">
+                <div id='A1' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: A1() == X,  oSquare: A1() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='B1' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: B1() == X,  oSquare: B1() == O}'></div>
+                <div class='inlineBlock vertLine'></div>
+                <div id='C1' class='gameSquare inlineBlock' 
+                    data-bind='click: click, css: { xSquare: C1() == X,  oSquare: C1() == O}'></div>
+            </div>
+        </div>
+        <br/>
+        <div id='metaData'>
+            <div id="status" class='inlineBlock' data-bind='text: status'></div>
+            <div id='avatar' class="player" data-bind="visible: status() == playerStr"></div>
+            <div id='avatar' class="ai" data-bind="visible: status() == aiStr"></div>
+        </div>
+    </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ticTacEngine Test</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/lib/loader.js"></script>
+    </head>
+    <body>
+        <div id='gameBoard' style="cursor: crosshair;">
+            <div>
+                <span id='A3' data-bind='click: click'></span>
+                <span id='B3' data-bind='click: click'></span>
+                <span id='C3' data-bind='click: click'></span>
+            </div>
+            <div>
+                <span id='A2' data-bind='text: A2, click: click'></span>
+                <span id='B2' data-bind='text: B2, click: click'></span>
+                <span id='C2' data-bind='text: C2, click: click'></span>
+            </div>
+            <div>
+                <span id='A1' data-bind='text: A1, click: click'></span>
+                <span id='B1' data-bind='text: B1, click: click'></span>
+                <span id='C1' data-bind='text: C1, click: click'></span>
+            </div>
+        </div>
+        <div id="status" data-bind='text: status'></div>
+    </body>
+</html>-->

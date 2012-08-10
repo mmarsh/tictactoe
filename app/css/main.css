@@ -1,0 +1,57 @@
+.hide
+{
+    display: none;
+}
+
+.gameSquare 
+{
+    height: 50px;
+    width: 50px;
+    cursor: crosshair;
+}
+
+.xSquare
+{
+    background-image: url('x.png');
+}
+
+.oSquare
+{
+    background-image: url('o.png');
+}
+
+.inlineBlock
+{
+    display: inline-block;
+    
+}
+
+.vertLine
+{
+    height: 51px;
+    width: 10px;
+    background-color: black;
+}
+
+.horzLine
+{
+    height: 10px;
+    width: 190px;
+    background-color: black;
+}
+
+#avatar
+{
+    height: 64px;
+    width: 64px;
+}
+
+.ai
+{
+    background-image: url('ai.jpg');
+}
+
+.player
+{
+    background-image: url('player.jpg');
+}
