@@ -48,10 +48,10 @@
 
 .ai
 {
-    background-image: url('ai.jpg');
+    background-image: url('o.png');
 }
 
 .player
 {
-    background-image: url('player.jpg');
+    background-image: url('x.png');
 }
