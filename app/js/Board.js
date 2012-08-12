@@ -118,6 +118,18 @@ function Board(seedBoard) {
                 evaluateDiag2(player));
     }
     
+    var allPossibleMovesMade = function () {
+        return (self['A1'] != '--' &&
+                self['A2'] != '--' &&
+                self['A3'] != '--' &&
+                self['B1'] != '--' &&
+                self['B2'] != '--' &&
+                self['B3'] != '--' &&
+                self['C1'] != '--' &&
+                self['C2'] != '--' &&
+                self['C3'] != '--')
+    }
+    
     self.getWinner = function () {
         var winner = undefined;
         
@@ -125,7 +137,9 @@ function Board(seedBoard) {
             winner = X;
         else if(evaluateRows(O) || evaluateColumns(O) || evaluateDiagonals(O))
             winner = O;
-        
+            
+        if ( winner == undefined && allPossibleMovesMade() )
+            winner = 'draw';
         
         return winner;
     }
