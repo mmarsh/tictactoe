@@ -53,7 +53,8 @@ function Engine() {
             var count = {
                 X: 0,
                 O: 0,
-                undefined: 0
+                undefined: 0,
+                'draw': 0
             };
             determineOutcomes(b.getChildren()[i], count);
             counts.push(count);
