@@ -12,14 +12,14 @@ function BoardVM(ko) {
     self.C1 = ko.observable('');
         
     self.update = function(board) {
-        self.A3(board.A3);
-        self.A2(board.A2);
-        self.A1(board.A1);
-        self.B3(board.B3);
-        self.B2(board.B2);
-        self.B1(board.B1);
-        self.C3(board.C3);
-        self.C2(board.C2);
-        self.C1(board.C1);
+        self.A3(board.squares[0][2]);
+        self.A2(board.squares[0][1]);
+        self.A1(board.squares[0][0]);
+        self.B3(board.squares[1][2]);
+        self.B2(board.squares[1][1]);
+        self.B1(board.squares[1][0]);
+        self.C3(board.squares[2][2]);
+        self.C2(board.squares[2][1]);
+        self.C1(board.squares[2][0]);
     }
 }

@@ -1,11 +1,20 @@
 function Engine() {
     var self = this;
     
+    var lut = {0:'A',
+               1:'B',
+               2:'C'};
+    
     var generateMoveList = function (board) {
         var moves = [];
-        for(prop in board)
-            if(board[prop] == '--')
-                moves.push(prop);
+        for (var i = 0 ; i < 3 ; i++ ) {
+            for (var j = 0 ; j < 3 ; j++ ) {
+                if (board.squares[i][j] == undefined) {
+                    moves.push(lut[i]+(j+1));
+                }
+            }
+        }
+        
         return moves;
     }
     
