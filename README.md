@@ -13,8 +13,8 @@ Uses a synchronous script loader (found in loader.js) which digs into
 cfg\dependencies.txt to load the js files. The last file in the txt file,
 app.js, initializes the state of the app and shows the ui.
 
-### Been kicking around the idea of a simple js spring type loader,
-hopefully this will replace loader.js
+#### Been kicking around the idea of a simple js spring type loader,
+#### hopefully this will replace loader.js
 
 Deployment
 --------------------
