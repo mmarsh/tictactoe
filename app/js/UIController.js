@@ -5,36 +5,41 @@ function UIController(ko, boardVM, ai, board) {
     
     var gameOver = false;
     
-    var checkForWinner = function () {
+    var checkForWinner = function () {        
         var winner = board.getWinner();
-        if (winner != undefined && winner != 'draw') {
-            gameOver = true;
-            self.status(winner + ' has won! F5 to play again');
+        switch(winner)
+        {
+            case DRAW:
+              gameOver = true;
+              self.status("It's a draw!");
+              break;
+            case undefined:
+              break;
+            default:
+              gameOver = true;
+              self.status(winner + ' has won! F5 to play again');
         }
-            
-       else if ( winner == 'draw' ) {
-            gameOver = true;
-            self.status("It's a draw!");
-        }
-        
+
         return gameOver;
+    }
+    
+    var move = function (pos) {
+        board.applyMove(pos);
+        boardVM.update(board);
+        
+        return checkForWinner();
     }
     
     self.click = function (data, event) {
         if(!gameOver) {
-            var pos = event.target.id;
-            board.applyMove(pos);
-            boardVM.update(board);
-            self.status(aiStr);
-            if(checkForWinner())
+            if (move(event.target.id))
                 return;
+            else
+                self.status(aiStr);
             
             setTimeout(function () {
-                var aiPos = ai.getNextMove(board);
-                board.applyMove(aiPos);
-                boardVM.update(board);
+                move(ai.getNextMove(board))
                 self.status(playerStr);
-                checkForWinner();
             }, 1000);
         }
     };
@@ -42,11 +47,8 @@ function UIController(ko, boardVM, ai, board) {
     self.launch = function () {
         boardVM.click = ctlr.click;
         
-        ko.applyBindings(self, 
-                         document.getElementById('metaData'));
-        
-        ko.applyBindings(boardVM, 
-                         document.getElementById('gameBoard'));
+        ko.applyBindings(self, _METADATA_);
+        ko.applyBindings(boardVM, _GAMEBOARD_);
                          
         boardVM.update(board);
     };
