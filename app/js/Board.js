@@ -1,19 +1,10 @@
-
-// 
-// 3
-// 2
-// 1
-//   A  B  C
-
 function Board(seedBoard) {
     var self = this;
         
     // Should get this out of here...
-    
     var children = [];    
     self.addChild = function (child){ children.push(child); }
     self.getChildren = function () { return children; }
-    
     //--------
     
     var lut = {'A':0,
@@ -97,7 +88,7 @@ function Board(seedBoard) {
         if (evaluateRows(O) || evaluateColumns(O) || evaluateDiagonals(O))
             return O;
         if (allPossibleMovesMade() )
-            return 'draw';
+            return DRAW;
             
         return undefined;
     }

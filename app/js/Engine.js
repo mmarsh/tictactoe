@@ -20,7 +20,7 @@ function Engine() {
     
     var generateGameTree = function (board) {
         var moves = generateMoveList(board);
-        for(move in moves) {
+        for (move in moves) {
             var b = new Board(board);
             b.applyMove(moves[move]);
             board.addChild(b);
@@ -32,7 +32,7 @@ function Engine() {
     
     var determineOutcomes = function (node, count) {
         count[node.getWinner()]++;
-        for(var i = 0 ; i < node.getChildren().length ; i++) {
+        for (var i = 0 ; i < node.getChildren().length ; i++) {
             determineOutcomes(node.getChildren()[i], count);
         }
     }
@@ -40,7 +40,7 @@ function Engine() {
     var getIndexOfMinMaxOutcome = function(counts, player) {
         var index = -1;
         var best = undefined;
-        for(var i = 0 ; i < counts.length ; i++) {
+        for (var i = 0 ; i < counts.length ; i++) {
             if(best == undefined || counts[i][player] < best) {
                 best = counts[i][player];
                 index = i;
@@ -58,12 +58,12 @@ function Engine() {
         
         var counts = [];
 
-        for(var i = 0 ; i < b.getChildren().length ; i++) {
+        for (var i = 0 ; i < b.getChildren().length ; i++) {
             var count = {
                 X: 0,
                 O: 0,
                 undefined: 0,
-                'draw': 0
+                DRAW: 0
             };
             determineOutcomes(b.getChildren()[i], count);
             counts.push(count);

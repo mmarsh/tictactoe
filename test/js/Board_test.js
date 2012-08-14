@@ -3,6 +3,7 @@ module('Board', {
         sut = new Board();
         X = 'X';
         O = 'O';
+        DRAW = 'draw';
     },
     teardown: function () {}
 });
