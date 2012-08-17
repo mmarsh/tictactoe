@@ -9,12 +9,9 @@ Also contains a simple ui as a proof of concept.
 
 Startup
 --------------------
-Uses a synchronous script loader (found in loader.js) which digs into 
-cfg\dependencies.txt to load the js files. The last file in the txt file,
-app.js, initializes the state of the app and shows the ui.
-
-Been kicking around the idea of a simple spring type loader for js files,
-hopefully this will replace loader.js
+Uses a homebrew [spring-style ioc container]]{http://www.springframework.net/doc-latest/reference/html/objects.html}
+to define dependencies and load order.
+This should be separated out into it's own project soon.
 
 Deployment
 --------------------

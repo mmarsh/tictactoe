@@ -1,0 +1,17 @@
+<objects>
+    <object name="UIController" type="js/UIController" launch-method="launch">
+        <constructor-arg ref="ko"/>
+        <constructor-arg ref="BoardVM"/>
+        <constructor-arg ref="Engine"/>
+        <constructor-arg ref="Board"/>
+    </object>
+    <object name="BoardVM" type="js/BoardVM">
+        <constructor-arg ref="ko"/>
+    </object>
+    <object name="Board" type="js/Board">
+    </object>
+    <object name="Engine" type="js/Engine">
+    </object>
+    <object name="ko" type="js/lib/knockout-2.1.0" global="true">
+    </object>
+</objects>

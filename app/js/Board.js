@@ -1,5 +1,5 @@
 function Board(seedBoard) {
-    var self = this;
+    var self = {};
         
     // Should get this out of here...
     var children = [];    
@@ -100,5 +100,7 @@ function Board(seedBoard) {
                 for (var j = 0 ; j < 3 ; j++ ) 
                     self.squares[i][j] = seedBoard.squares[i][j];
     }
+    
+    return self;
 }
 

@@ -1,5 +1,5 @@
 function BoardVM(ko) {
-    var self = this;
+    var self = {};
 
     self.A3 = ko.observable('');
     self.B3 = ko.observable('');
@@ -22,4 +22,6 @@ function BoardVM(ko) {
         self.C2(board.squares[2][1]);
         self.C1(board.squares[2][0]);
     }
+    
+    return self;
 }

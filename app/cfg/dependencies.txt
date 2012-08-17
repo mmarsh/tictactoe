@@ -1,6 +1,0 @@
-js/Board.js
-js/BoardVM.js
-js/UIController.js
-js/lib/knockout-2.1.0.js
-js/Engine.js
-js/App.js

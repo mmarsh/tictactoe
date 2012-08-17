@@ -1,6 +1,14 @@
 function UIController(ko, boardVM, ai, board) {
-    var self = this;
-    
+    var self = {};
+
+    O = 'O';
+    X = 'X';
+    DRAW = 'draw';
+    aiStr = "O is thinking...";
+    playerStr = "X is thinking...(that's you!)";
+    _METADATA_ = document.getElementById('metaData');
+    _GAMEBOARD_ = document.getElementById('gameBoard');
+        
     self.status = ko.observable(playerStr);
     
     var gameOver = false;
@@ -45,11 +53,17 @@ function UIController(ko, boardVM, ai, board) {
     };
     
     self.launch = function () {
-        boardVM.click = ctlr.click;
+
+
+        document.body.className = "";
+
+        boardVM.click = self.click;
         
         ko.applyBindings(self, _METADATA_);
         ko.applyBindings(boardVM, _GAMEBOARD_);
                          
         boardVM.update(board);
     };
+    
+    return self;
 }

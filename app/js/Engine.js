@@ -1,5 +1,5 @@
 function Engine() {
-    var self = this;
+    var self = {};
     
     var lut = {0:'A',
                1:'B',
@@ -71,4 +71,6 @@ function Engine() {
         
         return moves[getIndexOfMinMaxOutcome(counts, otherPlayer)];
     }
+    
+    return self;
 }
