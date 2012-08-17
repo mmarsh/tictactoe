@@ -9,7 +9,7 @@ Also contains a simple ui as a proof of concept.
 
 Startup
 --------------------
-Uses a homebrew [spring-style ioc container]{http://www.springframework.net/doc-latest/reference/html/objects.html}
+Uses a homebrew [spring-style ioc container](http://www.springframework.net/doc-latest/reference/html/objects.html)
 to define dependencies and load order.
 This should be separated out into it's own project soon.
 
